@@ -1,0 +1,27 @@
+{
+  "name": "audio-recording-example",
+  "description": "Hear me now.",
+  "private": true,
+  "main": "node_modules/expo/AppEntry.js",
+  "scripts": {
+    "start": "expo start",
+    "android": "expo start --android",
+    "ios": "expo start --ios",
+    "eject": "expo eject"
+  },
+  "dependencies": {
+    "@react-native-community/slider": "^4.4.3",
+    "expo": "^49.0.21",
+    "expo-asset": "~8.10.1",
+    "expo-av": "~13.4.1",
+    "expo-file-system": "~15.4.5",
+    "expo-permissions": "~14.2.1",
+    "react": "18.2.0",
+    "react-native": "0.72.6"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.8.6",
+    "@types/react": "~18.2.14",
+    "typescript": "^5.1.3"
+  }
+}
