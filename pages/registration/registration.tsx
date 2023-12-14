@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import {
   StyleSheet,
   Text,
@@ -11,27 +11,27 @@ import * as Icons from "../../components/Icons";
 import { Dimensions } from "react-native";
 
 type Props = {
-    isPlaying: boolean;
-    isPlaybackAllowed: boolean;
-    isLoading: boolean;
-    muted: boolean;
-    soundPosition: number | null;
-    soundDuration: number | null;
-    shouldCorrectPitch: boolean;
-    volume: number;
-    rate: number;
-    onPlayPausePressed: () => void;
-    onSeekSliderValueChange: (value: number) => void;
-    onSeekSliderSlidingComplete: (value: number) => void;
-    onVolumeSliderValueChange: (value: number) => void;
-    onRateSliderSlidingComplete: (value: number) => void;
-    onPitchCorrectionPressed: () => void;
-    onStopPressed: () => void;
-    onMutePressed: () => void;
-    getSeekSliderPosition: () => number;
-    getMMSSFromMillis: (duration: number) => string;
-    getPlaybackTimestamp: () => string;
-    };
+  isPlaying: boolean;
+  isPlaybackAllowed: boolean;
+  isLoading: boolean;
+  muted: boolean;
+  soundPosition: number | null;
+  soundDuration: number | null;
+  shouldCorrectPitch: boolean;
+  volume: number;
+  rate: number;
+  onPlayPausePressed: () => void;
+  onSeekSliderValueChange: (value: number) => void;
+  onSeekSliderSlidingComplete: (value: number) => void;
+  onVolumeSliderValueChange: (value: number) => void;
+  onRateSliderSlidingComplete: (value: number) => void;
+  onPitchCorrectionPressed: () => void;
+  onStopPressed: () => void;
+  onMutePressed: () => void;
+  getSeekSliderPosition: () => number;
+  getMMSSFromMillis: (duration: number) => string;
+  getPlaybackTimestamp: () => string;
+};
 
 const BACKGROUND_COLOR = "#FFF8ED";
 const LIVE_COLOR = "#FF0000";
@@ -41,19 +41,23 @@ const RATE_SCALE = 3.0;
 const { width: DEVICE_WIDTH, height: DEVICE_HEIGHT } = Dimensions.get("window");
 
 export default function Registration({
-    isPlaying,
-    isPlaybackAllowed,
-    isLoading,
-    muted,
-    onPlayPausePressed,
-    onSeekSliderValueChange,
-    onSeekSliderSlidingComplete,
-    onVolumeSliderValueChange,
-    onStopPressed,
-    onMutePressed,
-    getSeekSliderPosition,
-    getPlaybackTimestamp,
+  isPlaying,
+  isPlaybackAllowed,
+  isLoading,
+  muted,
+  onPlayPausePressed,
+  onSeekSliderValueChange,
+  onSeekSliderSlidingComplete,
+  onVolumeSliderValueChange,
+  onStopPressed,
+  onMutePressed,
+  getSeekSliderPosition,
+  getPlaybackTimestamp,
 }: Props) {
+
+
+
+
   return (
     <View
       style={[
@@ -173,14 +177,14 @@ export default function Registration({
 }
 
 const styles = StyleSheet.create({
-    playStopContainer: {
-        flex: 1,
-        flexDirection: "row",
-        alignItems: "center",
-        justifyContent: "space-between",
-        minWidth: ((Icons.PLAY_BUTTON.width + Icons.STOP_BUTTON.width) * 3.0) / 2.0,
-        maxWidth: ((Icons.PLAY_BUTTON.width + Icons.STOP_BUTTON.width) * 3.0) / 2.0,
-      },
+  playStopContainer: {
+    flex: 1,
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "space-between",
+    minWidth: ((Icons.PLAY_BUTTON.width + Icons.STOP_BUTTON.width) * 3.0) / 2.0,
+    maxWidth: ((Icons.PLAY_BUTTON.width + Icons.STOP_BUTTON.width) * 3.0) / 2.0,
+  },
   playbackTimestamp: {
     textAlign: "right",
     alignSelf: "stretch",
